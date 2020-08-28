@@ -1,0 +1,2 @@
+class UsStatesController < ApplicationController
+end

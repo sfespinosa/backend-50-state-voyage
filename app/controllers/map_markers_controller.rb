@@ -1,0 +1,2 @@
+class MapMarkersController < ApplicationController
+end

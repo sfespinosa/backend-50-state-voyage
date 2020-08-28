@@ -1,0 +1,2 @@
+class EstablishmentCollectionsController < ApplicationController
+end

@@ -10,10 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_185033) do
+ActiveRecord::Schema.define(version: 2020_08_28_172157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "establishment_collections", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "establishment_id", null: false
+    t.string "user_comments"
+    t.boolean "visited"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["establishment_id"], name: "index_establishment_collections_on_establishment_id"
+    t.index ["user_id"], name: "index_establishment_collections_on_user_id"
+  end
+
+  create_table "establishments", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "phone_number"
+    t.integer "lat"
+    t.integer "lng"
+    t.float "rating"
+    t.string "img_url"
+    t.string "website_url"
+    t.string "reference_id"
+    t.bigint "us_state_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["us_state_id"], name: "index_establishments_on_us_state_id"
+  end
+
+  create_table "map_markers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "establishment_id", null: false
+    t.string "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["establishment_id"], name: "index_map_markers_on_establishment_id"
+    t.index ["user_id"], name: "index_map_markers_on_user_id"
+  end
+
+  create_table "state_collections", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "us_state_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["us_state_id"], name: "index_state_collections_on_us_state_id"
+    t.index ["user_id"], name: "index_state_collections_on_user_id"
+  end
+
+  create_table "us_states", force: :cascade do |t|
+    t.string "name"
+    t.string "abbrv"
+    t.string "nickname"
+    t.string "capital_city"
+    t.integer "capital_lat"
+    t.integer "capital_lng"
+    t.string "flag_img_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -26,4 +84,11 @@ ActiveRecord::Schema.define(version: 2020_08_27_185033) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "establishment_collections", "establishments"
+  add_foreign_key "establishment_collections", "users"
+  add_foreign_key "establishments", "us_states"
+  add_foreign_key "map_markers", "establishments"
+  add_foreign_key "map_markers", "users"
+  add_foreign_key "state_collections", "us_states"
+  add_foreign_key "state_collections", "users"
 end

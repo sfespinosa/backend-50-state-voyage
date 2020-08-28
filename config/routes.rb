@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :users
+  # resources :map_markers
+  # resources :establishment_collections
+  # resources :state_collections
+  # resources :establishments
+  # resources :us_states
+  resources :users, only: [:create]
 
   post '/login', to: 'users#login'
   get '/persist', to: 'users#persist'

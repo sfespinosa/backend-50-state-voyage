@@ -1,0 +1,2 @@
+class StateCollectionsController < ApplicationController
+end
