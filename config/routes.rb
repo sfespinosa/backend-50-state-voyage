@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # resources :establishment_collections
   # resources :state_collections
   # resources :establishments
-  # resources :us_states
+  resources :us_states, only: [:index]
   resources :users, only: [:create]
 
   post '/login', to: 'users#login'

@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2020_08_28_172157) do
     t.string "name"
     t.string "address"
     t.string "phone_number"
-    t.integer "lat"
-    t.integer "lng"
+    t.float "lat"
+    t.float "lng"
     t.float "rating"
     t.string "img_url"
     t.string "website_url"
@@ -66,8 +66,8 @@ ActiveRecord::Schema.define(version: 2020_08_28_172157) do
     t.string "abbrv"
     t.string "nickname"
     t.string "capital_city"
-    t.integer "capital_lat"
-    t.integer "capital_lng"
+    t.float "capital_lat"
+    t.float "capital_lng"
     t.string "flag_img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

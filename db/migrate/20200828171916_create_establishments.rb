@@ -4,8 +4,8 @@ class CreateEstablishments < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :address
       t.string :phone_number
-      t.integer :lat
-      t.integer :lng
+      t.float :lat
+      t.float :lng
       t.float :rating
       t.string :img_url
       t.string :website_url
