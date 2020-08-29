@@ -26,6 +26,25 @@ class UsersController < ApplicationController
         render json: {user: UserSerializer.new(@user), token: token}
     end
 
+    def update
+        user = User.find(params[:id])
+        user.update(user_params)
+        if user.valid?
+            render json: {user: UserSerializer.new(user)}
+        else
+            render json: {error: 'User cannot be updated'}
+        end
+    end
+
+    def destroy
+        user = User.find(params[:id])
+        if user
+            user.delete
+        else
+            render json: {error: 'Unable to delete user'}
+        end
+    end
+
     private
     def user_params
         params.permit(:username, :password, :name, :age, :location, :email_address)

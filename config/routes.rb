@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # resources :state_collections
   # resources :establishments
   resources :us_states, only: [:index]
-  resources :users, only: [:create]
+  resources :users, only: [:create, :update, :destroy]
 
   post '/login', to: 'users#login'
   get '/persist', to: 'users#persist'
