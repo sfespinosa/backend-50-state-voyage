@@ -7,7 +7,6 @@ class StateCollectionsController < ApplicationController
 
     def create
         state_collection = StateCollection.new(state_collection_params)
-        byebug
         if state_collection.save
             render json: state_collection
         else 
