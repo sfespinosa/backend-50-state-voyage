@@ -14,6 +14,16 @@ class EstablishmentCollectionsController < ApplicationController
         end
     end
 
+    def update
+        establishment_collection = EstablishmentCollection.find(params[:id])
+        if establishment_collection_params
+            establishment_collection.update(establishment_collection_params)
+            render json: establishment_collection
+        else
+            render json: {error: 'unable to save to your collection'}
+        end
+    end
+
     def destroy
         establishment_collection = EstablishmentCollection.find(params[:id])
         establishment_collection.destroy

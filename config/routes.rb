@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # resources :map_markers
-  resources :establishment_collections, only: [:index, :create, :destroy]
+  resources :establishment_collections, only: [:index, :create, :update, :destroy]
   resources :state_collections, only: [:create, :index, :destroy]
   resources :establishments, only: [:index, :create]
   resources :us_states, only: [:index]
