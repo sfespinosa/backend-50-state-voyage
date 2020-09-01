@@ -7,9 +7,7 @@ class EstablishmentsController < ApplicationController
 
     def create
         establishment = Establishment.new(establishment_params)
-        byebug
         if establishment.save
-            byebug
             render json: establishment
         else
             render json: {error: 'unable to save establishment'}
