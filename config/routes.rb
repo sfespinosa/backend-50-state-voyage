@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # resources :map_markers
   # resources :establishment_collections
   resources :state_collections, only: [:create, :index, :destroy]
-  resources :establishments, only: [:create]
+  resources :establishments, only: [:index, :create]
   resources :us_states, only: [:index]
   resources :users, only: [:create, :update, :destroy, :show]
 

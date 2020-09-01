@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authorized, only: [:persist]
+    before_action :authorized, only: [:persist, :update]
 
     def show
         user = User.find(params[:id])

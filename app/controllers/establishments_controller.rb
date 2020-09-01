@@ -1,8 +1,15 @@
 class EstablishmentsController < ApplicationController
 
+    def index
+        establishments = Establishment.all
+        render json: establishments
+    end
+
     def create
         establishment = Establishment.new(establishment_params)
+        byebug
         if establishment.save
+            byebug
             render json: establishment
         else
             render json: {error: 'unable to save establishment'}
