@@ -1,5 +1,5 @@
 class MapMarkerSerializer < ActiveModel::Serializer
-  attributes :id, :category
-  has_one :user
-  has_one :establishment
+  attributes :id, :category, :lat, :lng
+  has_one :user_id
+  has_one :establishment_id
 end
