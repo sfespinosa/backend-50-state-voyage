@@ -14,6 +14,12 @@ class MapMarkersController < ApplicationController
         end
     end
 
+    def update
+        map_marker = MapMarker.find(params[:id])
+        map_marker.update(map_marker_params)
+        render json: map_marker
+    end
+
     def destroy
         map_marker = MapMarker.find(params[:id])
         map_marker.destroy
