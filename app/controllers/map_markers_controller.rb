@@ -14,6 +14,11 @@ class MapMarkersController < ApplicationController
         end
     end
 
+    def destroy
+        map_marker = MapMarker.find(params[:id])
+        map_marker.destroy
+    end
+
     private
     def map_marker_params
         params.require(:map_marker).permit(:user_id, :establishment_id, :category)
