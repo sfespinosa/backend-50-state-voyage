@@ -8,6 +8,11 @@ class User < ApplicationRecord
     has_many :map_markers, dependent: :destroy
     has_many :markers, through: :map_markers, source: :establishment
     
+    has_many :active_relationships, class_name: "UserRelationship", foreign_key: :follower_id, dependent: :destroy
+    has_many :followed_users, through: :active_relationships, source: :followed_user
+    has_many :passive_relationships, class_name: "UserRelationship", foreign_key: :followed_user_id, dependent: :destroy
+    has_many :followers, through: :passive_relationships, source: :follower
+
     has_secure_password
     has_secure_password :recovery_password, validations: false
 
