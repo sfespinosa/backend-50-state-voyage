@@ -23,4 +23,15 @@ class User < ApplicationRecord
         (Time.now.to_s(:number).to_i - self.birthdate.to_time.to_s(:number).to_i)/10e9.to_i
     end
 
+    def friends_feed
+        news_feed = [] 
+
+        self.followed_users.collect do |user|
+            user.establishment_collections.each do |ec|
+                news_feed.push(ec)
+            end
+        end
+
+        news_feed.sort { |a,b| b.created_at <=> a.created_at}
+    end
 end
