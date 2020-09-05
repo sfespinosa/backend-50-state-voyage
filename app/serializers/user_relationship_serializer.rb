@@ -1,5 +1,5 @@
 class UserRelationshipSerializer < ActiveModel::Serializer
-  attributes :id
-  has_one :followed_user_id
+  attributes :id, :followed_user
+  has_one :followed_user_id 
   has_one :follower_id
 end

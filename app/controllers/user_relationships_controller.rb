@@ -9,6 +9,11 @@ class UserRelationshipsController < ApplicationController
         end
     end
 
+    def destroy
+        user_relationship = UserRelationship.find(params[:id])
+        user_relationship.destroy
+    end
+
     private
     def user_relationship_params
         params.require(:user_relationship).permit(:followed_user_id, :follower_id)
