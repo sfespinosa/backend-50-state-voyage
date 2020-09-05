@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_relationships, only: [:create, :destroy]
   resources :map_markers, only: [:index, :create, :update, :destroy]
   resources :establishment_collections, only: [:index, :create, :update, :destroy]
   resources :state_collections, only: [:create, :index, :destroy]
