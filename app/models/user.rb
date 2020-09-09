@@ -34,4 +34,26 @@ class User < ApplicationRecord
 
         news_feed.sort { |a,b| b.created_at <=> a.created_at}
     end
+
+    def total_states_rankings
+        arr = []
+
+        my_hash = {}
+        my_hash['username'] = self.username
+        my_hash['total_states'] = self.us_states.length
+        my_hash['user_id'] = self.id
+        my_hash['states_visited'] = self.us_states.collect{|state| state.name}
+        arr.push(my_hash)
+
+        self.followed_users.each do |user|
+            hash = {}
+            hash['username'] = user.username
+            hash['total_states'] = user.us_states.length
+            hash['user_id'] = user.id
+            hash['states_visited'] = user.us_states.collect{|state| state.name}
+            arr.push(hash)
+        end
+
+        arr.sort { |a,b| b['total_states'] <=> a['total_states']}
+    end
 end
