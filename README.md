@@ -1,24 +1,32 @@
-# README
+# <img src='./db/50-state-voyage-blue.png' alt='app logo'/>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# About
+While travelling is on hold due to COVID-19, ‘50 State Voyage’ is an application that allows you to track states you’ve been to and plan out visits to states you’ll visit sometime in the future.
 
-Things you may want to cover:
+You can also share some of your favorite places with friends and bounce ideas with each other for your respective trips!
 
-* Ruby version
+# Technologies
 
-* System dependencies
+* Ruby - version '2.6.1'
+* Rails - version '6.0.3.2'
+* PostgreSQL
+* Active Model Serializers
+* JSON Web Token
 
-* Configuration
+# Getting Started
+** You've reached the '50 State Voyage' back-end repo. To reach the front-end repo, please go to <a href='https://github.com/sfespinosa/frontend-50-state-voyage'>https://github.com/sfespinosa/frontend-50-state-voyage</a>. Both repos are required to run this project.
 
-* Database creation
+To start, clone this repo down and cd into the directory and run the following commands in your terminal:
 
-* Database initialization
+    bundle install              # to install the necessary gems
+    rails db:create             # to create PostgreSQL database
+    rails db:migrate            # to build database schema
+    rails db:seed               # to import data used within project
+    rails s                     # to start your server
 
-* How to run the test suite
+Once completed, refer to the Readme file in the front end repo for next steps and additional information about this project.
 
-* Services (job queues, cache servers, search engines, etc.)
+# Contributions
 
-* Deployment instructions
-
-* ...
+* Scott Espinosa 
+* Civil Service USA - https://github.com/CivilServiceUSA/us-states
