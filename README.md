@@ -28,7 +28,8 @@ Once completed, refer to the Readme file in the front end repo for next steps an
 
 # Contact Info
 
-Scott Espinosa - scottjames.espinosa@gmail.com<br/>
+Scott Espinosa<br/>
+scottjames.espinosa@gmail.com<br/>
 https://github.com/sfespinosa <br/>
 https://www.linkedin.com/in/scottespinosa/
 
