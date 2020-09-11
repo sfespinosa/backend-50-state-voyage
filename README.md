@@ -26,7 +26,14 @@ To start, clone this repo down and cd into the directory and run the following c
 
 Once completed, refer to the Readme file in the front end repo for next steps and additional information about this project.
 
-# Contributions
+# Contact Info
 
-* Scott Espinosa 
+Scott Espinosa - scottjames.espinosa@gmail.com<br/>
+https://github.com/sfespinosa <br/>
+https://www.linkedin.com/in/scottespinosa/
+
+# License
+Distributed under the MIT License.
+
+# Contributions
 * Civil Service USA - https://github.com/CivilServiceUSA/us-states
