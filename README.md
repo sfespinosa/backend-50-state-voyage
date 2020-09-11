@@ -1,4 +1,4 @@
-# <img src='./db/50-state-voyage-blue.png' alt='app logo'/>
+## <img src='./db/50-state-voyage-blue.png' alt='app logo'/>
 
 # About
 While travelling is on hold due to COVID-19, ‘50 State Voyage’ is an application that allows you to track states you’ve been to and plan out visits to states you’ll visit sometime in the future.
